@@ -1,12 +1,11 @@
 <?php
 /**
- * Plugin Name: Simple Post Expiration
- * Plugin URL: http://pippinsplugins.com/simple-post-expiration
+ * Plugin Name: Simple Scholarship Expiration
+ * Plugin URL: https://github.com/chiotis/Simple-Post-Expiration
  * Description: A simple plugin that allows you to set an expiration date on posts. Once a post is expired, "Expired" will be prefixed to the post title.
- * Version: 1.0
- * Author: Pippin Williamson
+ * Version: 1.0.0
+ * Author: Christos Chiotis & Pippin Williamson
  * Author URI: http://pippinsplugins.com
- * Contributors: mordauk, rzen
  * Text Domain: pw-spe
  * Domain Path: languages
  *
@@ -92,7 +91,7 @@ function pw_spe_filter_title( $title = '', $post_id = 0 ) {
 	if( pw_spe_is_expired( $post_id ) ) {
 
 		// Post is expired so attach the prefix
-		$prefix = get_option( 'pw_spe_prefix', __( 'Expired:', 'pw-spe' ) );
+		$prefix = get_option( 'pw_spe_prefix', __( '[ΕΛΗΞΕ] -', 'pw-spe' ) );
 		$title  = $prefix . '&nbsp;' . $title;
 
 	}
